@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Let's create a ruby project."
+
+echo -n "What is the name of the project? "
+read -e PROJECT_NAME
+
+echo "Creating $PROJECT_NAME"
+
+cp -r skeleton $PROJECT_NAME
+cd $PROJECT_NAME
+mv NAME.gemspec $PROJECT_NAME.gemspec
+mv bin/NAME bin/$PROJECT_NAME
+mv tests/test_NAME.rb tests/test_$PROJECT_NAME.rb
+mv lib/NAME lib/$PROJECT_NAME
+mv lib/NAME.rb lib/$PROJECT_NAME.rb
+find . -name "*NAME*" -print
