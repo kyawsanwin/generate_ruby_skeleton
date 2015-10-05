@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+project_name = ARGV.shift
+
+puts "Creating #{project_name}."
+
+
+`cp -r skeleton #{project_name}`
+Dir.chdir "#{project_name}"
+`mv NAME.gemspec #{project_name}.gemspec`
+`mv bin/NAME bin/#{project_name}`
+`mv tests/test_NAME.rb tests/test_#{project_name}.rb`
+`mv lib/NAME lib/#{project_name}`
+`mv lib/NAME.rb lib/#{project_name}.rb`
+
+puts "Created here"
+puts `pwd`
